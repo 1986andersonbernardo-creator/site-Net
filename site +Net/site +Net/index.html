@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>+Net - Muito mais internet pra você</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body { background:#120038; color:#fff; overflow-x:hidden; }
+
+/* Header */
+header {
+  background:#6a1b9a;
+  color:#fff;
+  padding:10px 40px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+header h1 { font-size:1.5rem; }
+nav a { color:#fff; text-decoration:none; margin-left:25px; font-weight:600; transition:0.3s; }
+nav a:hover { color:#ba68c8; }
+
+/* Banner estático */
+.banner {
+  position: relative;
+  height:700px;
+  overflow: hidden;
+  background-image: url('imagens/banner.png');
+  background-size: cover;
+  background-position: center;
+  animation: bannerEffect 12s ease-in-out infinite alternate;
+}
+@keyframes bannerEffect {
+  0% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.05); filter: brightness(1.1); }
+  100% { transform: scale(1); filter: brightness(1); }
+}
+
+/* Planos */
+.planos { 
+  padding:40px 20px 80px 20px; 
+  text-align:center; 
+  background:linear-gradient(180deg,#4a148c,#6a1b9a); 
+}
+.planos h2 { font-size:2.5rem; margin-bottom:30px; color:#e1bee7; }
+
+/* Benefícios dentro da barra de planos */
+.beneficios-planos {
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  margin-bottom:40px;
+}
+.beneficio-planos {
+  background: linear-gradient(135deg, #7b1fa2, #4a148c);
+  padding:15px 20px;
+  border-radius:50px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  color:#fff;
+  font-weight:300;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.beneficio-planos:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 6px 20px rgba(123,31,162,0.6);
+}
+.beneficio-planos img {
+  width:50px;
+  height:50px;
+  margin-bottom:8px;
+  filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.5));
+} 
+.beneficio-planos span { font-size:1rem; }
+
+/* Cards dos planos */
+.cards { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
+.card {
+  background:rgba(255,255,255,0.1);
+  padding:20px;
+  border-radius:15px;
+  min-width:250px;
+  transition:0.3s;
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+.card:hover { background:rgba(255,255,255,0.2); transform:translateY(-5px); }
+.card h3 { font-size:1.8rem; margin-bottom:15px; color:#e1bee7; }
+.card p { margin:3px 0; font-size:1rem; }
+
+/* Sobre */
+.sobre {
+  padding:80px 20px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:50px;
+  flex-wrap:wrap;
+  background:#1a003c;
+}
+.sobre-img {
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.sobre-img img {
+  width:350px;
+  max-width:90%;
+  border-radius:15px;
+  box-shadow:0 5px 25px rgba(0,0,0,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.sobre-img img:hover { 
+  transform: scale(1.05);
+  box-shadow:0 10px 30px rgba(0,0,0,0.7);
+}
+
+.sobre-text {
+  flex:1;
+  max-width:600px;
+}
+.sobre-text h2 { font-size:2.2rem; margin-bottom:20px; color:#e1bee7; }
+.sobre-text p { line-height:1.6; font-size:1.1rem; color:#f1f1f1; }
+
+/* Cobertura */
+.cobertura { padding:40px 20px; text-align:center; background:#120038; }
+.cobertura h2 { font-size:1.8rem; margin-bottom:20px; color:#e1bee7; }
+.cobertura iframe { width:60%; max-width:500px; height:250px; border-radius:15px; border:none; }
+
+/* Contato */
+.contato { padding:20px; background:#6a1b9a; text-align:center; }
+.contato h2 { font-size:2.2rem; margin-bottom:30px; color:#e1bee7; }
+.contato p { margin:12px 0; font-size:1.1rem; display:flex; justify-content:center; align-items:center; gap:8px; }
+.contato a { color:#e1bee7; text-decoration:none; transition:0.3s; }
+.contato a:hover { text-decoration:underline; }
+.contato .icon { width:28px; height:28px; }
+
+/* Footer */
+footer { padding:25px; text-align:center; background:#4a148c; font-size:1rem; }
+footer a { color:#e1bee7; text-decoration:none; margin:0 8px; }
+footer a:hover { text-decoration:underline; }
+
+/* Responsivo */
+@media(max-width:768px){
+  .beneficios-planos { flex-direction:column; gap:20px; }
+  .sobre { flex-direction:column; text-align:center; }
+  .sobre-img img { width:90%; }
+  .sobre-text { text-align:center; }
+  .cards { flex-direction:column; }
+  .cobertura iframe { width:100%; height:200px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <h1>+Net</h1>
+  <nav>
+    <a href="#planos">Planos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#cobertura">Cobertura</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<!-- Banner estático -->
+<section class="banner"></section>
+
+<!-- Planos -->
+<section class="planos" id="planos">
+  <h2>Nossos Planos</h2>
+
+  <div class="beneficios-planos">
+    <div class="beneficio-planos">
+      <img src="imagens/wifi.png" alt="Wi-Fi Incluso">
+      <span>Wi-Fi Incluso</span>
+    </div>
+    <div class="beneficio-planos">
+      <img src="imagens/rocket.png" alt="Ultra Velocidade">
+      <span>Ultra Velocidade</span>
+    </div>
+    <div class="beneficio-planos">
+      <img src="imagens/tool.png" alt="Instalação Grátis">
+      <span>Instalação Grátis</span>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <h3>100 Mega</h3>
+      <p>R$ 59,90/mês</p>
+      <p>Wi-Fi Grátis</p>
+      <p>Instalação Inclusa</p>
+    </div>
+    <div class="card">
+      <h3>300 Mega</h3>
+      <p>R$ 69,90/mês</p>
+      <p>Wi-Fi Grátis</p>
+      <p>Instalação Inclusa</p>
+    </div>
+    <div class="card">
+      <h3>500 Mega</h3>
+      <p>R$ 79,90/mês</p>
+      <p>Wi-Fi Grátis</p>
+      <p>Instalação Inclusa</p>
+    </div>
+  </div>
+</section>
+
+<!-- Sobre -->
+<section class="sobre" id="sobre">
+  <div class="sobre-img">
+    <img src="imagens/tecnico.jpg" alt="Técnico +Net instalando fibra">
+  </div>
+  <div class="sobre-text">
+    <h2>Sobre a +Net</h2>
+    <p>A +Net é sinônimo de internet de alta qualidade, combinando velocidade excepcional, estabilidade e tecnologia de ponta. Nossa prioridade é oferecer soluções digitais inteligentes e atendimento personalizado, elevando a experiência online dos nossos clientes.</p>
+  </div>
+</section>
+
+<!-- Cobertura -->
+<section class="cobertura" id="cobertura">
+  <h2>Área de Atendimento</h2>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.XXXX!2d-34.855!3d-8.010!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab188cbf5eXXXXX!2sOuro%20Preto%20-%20Olinda!5e0!3m2!1spt-BR!2sbr!4v1670000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+<!-- Contato -->
+<section class="contato" id="contato">
+  <h2>Contato</h2>
+  <p>
+    <img src="imagens/email.png" alt="Email" class="icon"> 
+    Email: <a href="mailto:maisnetpe@gmail.com">maisnetpe@gmail.com</a>
+  </p>
+  <p>
+    <img src="imagens/instagram.png" alt="Instagram" class="icon"> 
+    Instagram: <a href="https://www.instagram.com/maisnet_pe/" target="_blank">@maisnet_pe</a>
+  </p>
+  <p>
+    <img src="imagens/whatsapp.png" alt="WhatsApp" class="icon"> 
+    WhatsApp: <a href="https://wa.me/5581891258210" target="_blank">(81) 89125-8210</a>
+  </p>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2026 +Net - Muito mais internet pra você | 
+  <a href="#planos">Planos</a> | 
+  <a href="#sobre">Sobre</a> | 
+  <a href="#contato">Contato</a>
+</footer>
+
+</body>
+</html>
